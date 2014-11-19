@@ -9,7 +9,6 @@ router.get('/', function(req, res) {
     res.render('index', { title: 'BROWSE MY WIKISTACK', docs:pages });
   });
 
-
 });
 
 module.exports = router;

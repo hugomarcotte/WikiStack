@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var add_routes = require('./routes/add');
+var wiki = require('./routes/wiki');
 
 var swig = require('swig');
 require('./filters')(swig);
@@ -30,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/add', add_routes);
+app.use('/wiki', wiki);
 
 
 // catch 404 and forward to error handler

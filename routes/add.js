@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var models = require('../models/');
+var models = require('../models');
 
 /* Show add page */
 router.get('/', function(req, res) {
@@ -10,8 +10,8 @@ router.get('/', function(req, res) {
 // Add new page
 router.post('/submit', function(req, res) {
 
-  var title = req.body.page_title,
-      body = req.body.page_content;
+  var title = req.body.title,
+      body = req.body.body;
 
   var generateUrlName = function(name) {
     if (typeof name != "undefined" && name !== "") {
@@ -27,10 +27,10 @@ router.post('/submit', function(req, res) {
 
   var url_name = generateUrlName(title);
 
-  var p = new models.Page({ "title": title, "body":body, "url_name": url_name});
+  models.Page.create({ "title": title, "body":body, "url_name": url_name}, function(page){
+    res.redirect('/');
+  });
 
-  p.save();
-  res.redirect('/');
 });
 
 module.exports = router;
