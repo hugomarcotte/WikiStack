@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var add_routes = require('./routes/add');
 
 var swig = require('swig');
+require('./filters')(swig);
 
 var app = express();
 
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/add', add_routes);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

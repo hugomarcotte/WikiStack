@@ -4,12 +4,14 @@
     <h1>{{title}}</h1>
     <hr>
     <div>
-      <ul>
-        <li><a href="">Fullstack Home</a></li>
-        <li><a href="">About me</a></li>
-        <li><a href="">My projects</a></li>
-        <li><a href="">My City</a></li>
-        <li><a href="">Code I've written</a></li>
-      </ul>
+      {% if docs.length > 0 %}
+        <ul>
+          {% for doc in docs %}
+            <li>{{doc|page_link}}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        There are no pages. Why don't you <a href='/add'>add one</a>?
+      {% endif %}
     </div>
 {% endblock %}
