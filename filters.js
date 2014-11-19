@@ -10,7 +10,7 @@ module.exports = function(swig) {
     } else {
       link_name = "Page "+doc.url_name;
     }
-    return "<a href='/wiki/"+doc.url_name+"'>"+link_name+"</a>";
+    return "<a href='/wiki/"+doc._id+"'>"+link_name+"</a>";
   };
   page_link.safe = true;
 
@@ -18,7 +18,7 @@ module.exports = function(swig) {
 
   var marked = require('marked');
   var markedFilter = function (body) {
-    console.log(body);
+
     return marked(body);
   };
   markedFilter.safe = true;

@@ -5,10 +5,12 @@ var models = require('../models');
 /* Show add page */
 router.get('/:id', function(req, res) {
 
+
   models.Page.findOne({ _id: req.params.id },function(err, page){
 
-    res.render('show', { title: page.title, body: page.body, id: req.params.id });
+    res.render('page', { pageTitle: 'EDIT A PAGE', title: page.title, body: page.body});
   });
+
 
 });
 
