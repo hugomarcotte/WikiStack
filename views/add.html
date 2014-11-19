@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>{{title}}</h1>
+    <hr>
+
+    <form role="form">
+      <div class="form-group">
+        <label for="page_title">PAGE TITLE</label>
+        <input type="email" class="form-control" id="page_title">
+      </div>
+      <div class="form-group">
+        <label for="page_content">PAGE CONTENT</label>
+        <textarea class="form-control" rows="3" id="page_content"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+{% endblock %}
