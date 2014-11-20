@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var add_routes = require('./routes/add');
+var add = require('./routes/add');
 var edit = require('./routes/edit');
 var wiki = require('./routes/wiki');
 
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/add', add_routes);
+app.use('/add', add);
 app.use('/edit', edit);
 app.use('/wiki', wiki);
 

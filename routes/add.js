@@ -4,7 +4,7 @@ var models = require('../models');
 
 /* Show add page */
 router.get('/', function(req, res) {
-  res.render('page', { pageTitle: 'ADD A PAGE' });
+  res.render('add', { pageTitle: 'ADD A PAGE' });
 });
 
 // Add new page

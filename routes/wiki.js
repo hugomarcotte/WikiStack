@@ -7,7 +7,7 @@ router.get('/:id', function(req, res) {
 
   models.Page.findOne({ _id: req.params.id },function(err, page){
 
-    res.render('show', { title: page.title, body: page.body, id: req.params.id });
+    res.render('wiki', { title: page.title, body: page.body, id: req.params.id });
   });
 
 });

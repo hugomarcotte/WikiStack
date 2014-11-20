@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>{{title}}</h1>
+    <hr>
+    <div>
+      {{ body|marked }}
+    </div>
+    <div>
+      <a href="/edit/{{id}}" class="btn btn-primary" role="button">Edit</a>
+      <a href="/edit/delete/{{id}}" class="btn btn-danger" role="button">Delete</a>
+    </div>
+
+{% endblock %}
